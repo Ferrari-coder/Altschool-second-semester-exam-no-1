@@ -255,6 +255,13 @@ height: 100vh;
   background: #005F3D;
   color: #54FFC2;
 }
+.repo-link a{
+  text-decoration: none;
+  color: #005F3D;
+}
+.repo-link a:hover{
+  color: #434343;
+}
 @media(max-width:1630px){
   .repos{
     overflow-x: hidden;

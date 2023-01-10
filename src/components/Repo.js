@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "../App.css";
 import { Helmet } from "react-helmet-async";
+let count = 1;
 
 function Repo() {
   const [Repos, setRepos] = useState([]);
@@ -17,6 +18,19 @@ function Repo() {
   useEffect(() => {
     getRepos(1);
   }, []);
+
+  const decrement = () => {
+    count < 2 || count--;
+    getRepos(count);
+  }
+  const increment = () => {
+      count >3 || count++;
+      console.log(count);
+      getRepos(count);
+  }
+
+  //how do i write an arrow function?
+
   return (
     <div className="repos">
       <Helmet>
@@ -54,10 +68,10 @@ function Repo() {
           ))}
       </ul>
       <div className="buttons">
-        <button onClick={() => getRepos(1)} className="previous">
+        <button onClick={decrement} className="previous">
           Previous
         </button>
-        <button onClick={() => getRepos(2)} className="next">
+        <button onClick={increment} className="next">
           Next
         </button>
       </div>

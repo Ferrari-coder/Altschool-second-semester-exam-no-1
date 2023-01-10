@@ -25,11 +25,15 @@ function Data() {
           <p className="details-date">
             Repository was created at: {repo?.created_at}
           </p>
-          <p className="repo-link">Repository-link: {repo?.html_url}</p>
+          <p className="repo-link">
+            Repository-link: <a href={repo?.html_url}>{repo?.html_url}</a>{" "}
+          </p>
         </div>
       </div>
       <div className="back-to-profile">
-       <NavLink className="back" to="/">Back to Home Page</NavLink>
+        <NavLink className="back" to="/">
+          Back to Home Page
+        </NavLink>
       </div>
     </div>
   );
