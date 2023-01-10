@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { DetailsContext } from "./Context";
+import { NavLink } from "react-router-dom";
 import "../App.css";
 function Data() {
   const { data } = useParams();
@@ -24,7 +25,11 @@ function Data() {
           <p className="details-date">
             Repository was created at: {repo?.created_at}
           </p>
+          <p className="repo-link">Repository-link: {repo?.html_url}</p>
         </div>
+      </div>
+      <div className="back-to-profile">
+       <NavLink className="back" to="/">Back to Home Page</NavLink>
       </div>
     </div>
   );
